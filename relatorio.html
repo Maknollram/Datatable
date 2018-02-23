@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Relatório</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.css"><!--Para so icones-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/relatorio.css">
+</head>
+    <body>
+        <div class="container" id="app">
+            <img width="1000" src="img/mb.png"
+                alt="MB">
+            </br>
+            <table width="1000">
+                <tr>
+                    <td>Nome completo: {{lista.nome}}</td>
+                </tr>
+                <tr>
+                    <td>Data de nascimento: {{lista.dtNascimento}}</td>
+                </tr>
+                <tr>
+                    <td>Idade: {{lista.idade}}</td>
+                </tr>
+                <tr>
+                    <td>Sexo: {{lista.sexo}}</td>
+                </tr>
+                <tr>
+                    <td>Estado civil: {{lista.estadoCivil}}</td>
+                </tr>
+                <tr>
+                    <td>Número do celular: {{lista.numeroCel}}</td>
+                </tr>
+                <tr>
+                    <td>Observações: </br>{{lista.observacoes}}</td>
+                </tr>
+            </table>
+            </br>
+            </br>
+            </br>
+            <div align="center" id="semImprimir">
+                <button v-on:click="imprimir" id="imprimir" name="imprimir" class="fa fa-print btn btn-info"> Imprimir</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/relatorio.js"></script>
+    </body>
+</html>

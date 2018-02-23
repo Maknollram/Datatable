@@ -1,0 +1,22 @@
+body { padding: 0 3ex; }
+table {
+    padding: 0;
+    border-collapse: collapse;
+    border: none;
+}
+th, td {
+    margin: 0;
+    padding: 0.8ex 1em;
+    /*border: 1px solid darkBlue;*/
+    border: none;
+}
+
+#imprimir{
+    color: #000000;
+}
+
+@media print { 
+    #semImprimir { display:none; } 
+    body { background: #fff; }
+}
+
