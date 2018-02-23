@@ -46,21 +46,21 @@ const app = new Vue({
         registrosPorPagina: [],
 		totalOrdenacao: "",
         lista: [
-            // {id: 1, nome: "Jow Lenu", dtNascimento: "20/06/1985", idade: 32, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 98752-6599", estadoCivil: "Casado", observacoes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ."},
-            // {id: 2, nome: "Lamurog", dtNascimento: "30/01/1995", idade: 22, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: "Se cansa rápido e tem problemas com autoridades."},
-            // {id: 3, nome: "Xukika", dtNascimento: "10/11/2007", idade: 10, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98795-3241", estadoCivil: "Solteira", observacoes: "Fala muito."},
-            // {id: 4, nome: "Labiboba", dtNascimento: "03/03/1939", idade: 78, sexo: "Feminino", celular: "Não",numeroCel: "", estadoCivil: "Viúva", observacoes: "Coroa bonita."},
-            // {id: 5, nome: "Crash Rayalison", dtNascimento: "28/02/1992", idade: 25, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 96412-6544", estadoCivil: "Solteiro", observacoes: ""},
-            // {id: 6, nome: "SpringFildson", dtNascimento: "01/08/1981", idade: 36, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Solteiro", observacoes: "Introvertido e inteligente."},
-            // {id: 7, nome: "Madeinusa", dtNascimento: "15/05/1973", idade: 44, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98133-7541", estadoCivil: "Casada", observacoes: "Nunca faz nada."},
-            // {id: 8, nome: "Bing Froid", dtNascimento: "27/09/1952", idade: 65, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: ""},
-            // {id: 9, nome: "Ilse", dtNascimento: "15/05/1973", idade: 44, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98133-7541", estadoCivil: "Casada", observacoes: "Nunca faz nada."},
-			// {id: 10, nome: "Morgward", dtNascimento: "27/09/1952", idade: 65, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: ""},
-			// {id: 11, nome: "Lenu", dtNascimento: "20/06/1985", idade: 32, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 98752-6599", estadoCivil: "Casado", observacoes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ."},
-            // {id: 12, nome: "Lam", dtNascimento: "30/01/1995", idade: 22, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: "Se cansa rápido e tem problemas com autoridades."},
-            // {id: 13, nome: "X", dtNascimento: "10/11/2007", idade: 10, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98795-3241", estadoCivil: "Solteira", observacoes: "Fala muito."},
-            // {id: 14, nome: "Labi", dtNascimento: "03/03/1939", idade: 78, sexo: "Feminino", celular: "Não",numeroCel: "", estadoCivil: "Viúva", observacoes: "Coroa bonita."},
-            // {id: 15, nome: "Rayal", dtNascimento: "28/02/1992", idade: 25, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 96412-6544", estadoCivil: "Solteiro", observacoes: ""}
+            {id: 1, nome: "Jow Lenu", dtNascimento: "20/06/1985", idade: 32, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 98752-6599", estadoCivil: "Casado", observacoes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ."},
+            {id: 2, nome: "Lamurog", dtNascimento: "30/01/1995", idade: 22, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: "Se cansa rápido e tem problemas com autoridades."},
+            {id: 3, nome: "Xukika", dtNascimento: "10/11/2007", idade: 10, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98795-3241", estadoCivil: "Solteira", observacoes: "Fala muito."},
+            {id: 4, nome: "Labiboba", dtNascimento: "03/03/1939", idade: 78, sexo: "Feminino", celular: "Não",numeroCel: "", estadoCivil: "Viúva", observacoes: "Coroa bonita."},
+            {id: 5, nome: "Crash Rayalison", dtNascimento: "28/02/1992", idade: 25, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 96412-6544", estadoCivil: "Solteiro", observacoes: ""},
+            {id: 6, nome: "SpringFildson", dtNascimento: "01/08/1981", idade: 36, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Solteiro", observacoes: "Introvertido e inteligente."},
+            {id: 7, nome: "Madeinusa", dtNascimento: "15/05/1973", idade: 44, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98133-7541", estadoCivil: "Casada", observacoes: "Nunca faz nada."},
+            {id: 8, nome: "Bing Froid", dtNascimento: "27/09/1952", idade: 65, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: ""},
+            {id: 9, nome: "Ilse", dtNascimento: "15/05/1973", idade: 44, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98133-7541", estadoCivil: "Casada", observacoes: "Nunca faz nada."},
+			{id: 10, nome: "Morgward", dtNascimento: "27/09/1952", idade: 65, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: ""},
+			{id: 11, nome: "Lenu", dtNascimento: "20/06/1985", idade: 32, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 98752-6599", estadoCivil: "Casado", observacoes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ."},
+            {id: 12, nome: "Lam", dtNascimento: "30/01/1995", idade: 22, sexo: "Masculino", celular: "Não",numeroCel: "", estadoCivil: "Casado", observacoes: "Se cansa rápido e tem problemas com autoridades."},
+            {id: 13, nome: "X", dtNascimento: "10/11/2007", idade: 10, sexo: "Feminino", celular: "Sim",numeroCel: "(21) 98795-3241", estadoCivil: "Solteira", observacoes: "Fala muito."},
+            {id: 14, nome: "Labi", dtNascimento: "03/03/1939", idade: 78, sexo: "Feminino", celular: "Não",numeroCel: "", estadoCivil: "Viúva", observacoes: "Coroa bonita."},
+            {id: 15, nome: "Rayal", dtNascimento: "28/02/1992", idade: 25, sexo: "Masculino", celular: "Sim",numeroCel: "(21) 96412-6544", estadoCivil: "Solteiro", observacoes: ""}
         ]
 	},
 	mounted(){
@@ -294,7 +294,9 @@ const app = new Vue({
             return _.orderBy(this.usuariosPorPagina, this.colunaPadrao, this.ordemColuna)
 		},
 		totalRegistrosPaginaInicio: function(){
-			this.listaZero()
+			if (this.lista.length == 0){
+				return 0
+			}
 			let retorno
 			if (this.filtrar ==""){
 				if (this.registrosPorPagina.length != 0){
@@ -318,7 +320,9 @@ const app = new Vue({
 			return retorno
 		},
 		totalRegistrosPaginaFim: function (){
-			this.listaZero()
+			if (this.lista.length == 0){
+				return 0
+			}
 			let retorno
 			if (this.filtrar ==""){
 				if (this.registrosPorPagina.length != 0){
@@ -596,11 +600,6 @@ const app = new Vue({
     				this.estadoCivil = "Viúva"
     			}
     		}
-		},
-		listaZero(){
-			if (this.lista.length == 0){
-				return 0
-			}
 		},
 		toggle(){
 			this.celular = (this.celular == "Sim") ? "Não" : "Sim"
