@@ -43,6 +43,7 @@ const app = new Vue({
         ],
 		paginaAtual: 1,
 		paginaAtualizada: 1,
+        numeroPaginasExibir: 3,
         registrosPorPagina: [],
 		totalOrdenacao: "",
         lista: [
@@ -275,6 +276,78 @@ const app = new Vue({
 			let paginas = Math.ceil(this.listaFiltrada.length/this.registroSelecionado)
     		return paginas
 		},
+        estaNaPrimeiraPagina() {
+            return this.paginaAtual === 1
+        },
+        estaNaUltimaPagina() {
+            return this.paginaAtual === this.totalPaginas
+        },
+        exibirPaginasPaginacao() {
+            // Declaração do array com os números das páginas que serão exibidas
+            const paginas = [];
+
+            // Verifica se está na primeira página
+            if (this.estaNaPrimeiraPagina) {
+                // Insere no array, a partir da página 1, as páginas que serão exibidas, com quantidade definida na variavel numeroPaginasExibir ou até acabar as páginas
+                for (let i = 1; i <= this.totalPaginas; i++) {
+                    paginas.push(i)
+                    // Se chegar em numeroPaginasExibir, interromper o loop
+                    if (paginas.length === this.numeroPaginasExibir) {
+                        break;
+                    }
+                }
+                // Retorna as páginas que devem ser exibidas
+                return paginas
+            }
+            // Verifica se está na última página
+            if (this.estaNaUltimaPagina) {
+                // Insere no array, a partir da última página, as páginas que serão exibidas, com quantidade definida na variavel numeroPaginasExibir ou até acabar as páginas
+                for (let i = this.totalPaginas; i > 0; i--) {
+                    paginas.push(i)
+                    // Se chegar em numeroPaginasExibir, interromper o loop
+                    if (paginas.length === this.numeroPaginasExibir) {
+                        break;
+                    }
+                }
+                // Inverte o array, pois foi inserido do maior para o menor, e retorna as páginas que devem ser exibidas
+                return paginas.reverse()
+            }
+
+            // Caso não esteja na primeira nem última página, calcula o número de páginas que vai ser exibido antes da atual e depois
+            const paginasAntesDepoisDaAtual = Math.floor(this.numeroPaginasExibir / 2)
+
+            // Insere as páginas antes da página atual
+            for (let i = 1; i <= paginasAntesDepoisDaAtual; i++) {
+                if (i === this.paginaAtual) {
+                    break;
+                }
+                paginas.push(this.paginaAtual - i)
+            }
+            // Inverte o array pois foi inserido da maior para a menor
+            paginas.reverse()
+
+            // Insere a página atual
+            paginas.push(this.paginaAtual)
+
+            // Insere as páginas depois das página atual
+            for (let i = 1; i <= paginasAntesDepoisDaAtual; i++) {
+                if ((this.paginaAtual + i) > this.totalPaginas) {
+                    break;
+                }
+                paginas.push(this.paginaAtual + i)
+            }
+
+            // Retorna as páginas que devem ser exibidas
+            return paginas
+        },
+        exibeReticenciasAntes() {
+            // Se a menor página a ser exibida não é a primeira, exibe reticências
+            return this.exibirPaginasPaginacao[0] > 1
+        },
+        exibeReticenciasDepois() {
+            // Se a maior página a ser exibida não é a última, exibe reticências
+            return this.exibirPaginasPaginacao[this.exibirPaginasPaginacao.length - 1] < this.totalPaginas
+        },
 		usuariosPorPagina: function(){
 			if (this.lista.length != 0){
 				this.mostrarRegistros = true
