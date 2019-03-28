@@ -43,7 +43,7 @@ const app = new Vue({
         ],
 		paginaAtual: 1,
 		paginaAtualizada: 1,
-        numeroPaginasExibir: 3, // Apenas funciona a partir de 3, abaixo isso está com bug
+        numeroPaginasExibir: 3,
         registrosPorPagina: [],
 		totalOrdenacao: "",
         lista: [
