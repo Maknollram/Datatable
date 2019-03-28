@@ -291,7 +291,7 @@ const app = new Vue({
                 // Insere no array, a partir da página 1, as páginas que serão exibidas, com quantidade definida na variavel numeroPaginasExibir ou até acabar as páginas
                 for (let i = 1; i <= this.totalPaginas; i++) {
                     paginas.push(i)
-                    // Se não houver mais páginas, antes de chegar em numeroPaginasExibir, interromper o loop
+                    // Se chegar em numeroPaginasExibir, interromper o loop
                     if (paginas.length === this.numeroPaginasExibir) {
                         break;
                     }
@@ -304,7 +304,7 @@ const app = new Vue({
                 // Insere no array, a partir da última página, as páginas que serão exibidas, com quantidade definida na variavel numeroPaginasExibir ou até acabar as páginas
                 for (let i = this.totalPaginas; i > 0; i--) {
                     paginas.push(i)
-                    // Se não houver mais páginas, antes de chegar em numeroPaginasExibir, interromper o loop
+                    // Se chegar em numeroPaginasExibir, interromper o loop
                     if (paginas.length === this.numeroPaginasExibir) {
                         break;
                     }
