@@ -332,28 +332,34 @@
 				</select>
 				<nav aria-label="Page navigation example">
 				  <ul class="pagination">
-					<li class="page-item">
+					<li class="page-item" :class="{ disabled: estaNaPrimeiraPagina }">
 						<a href="#" v-on:click="primeiraPagina" class="page-link" aria-label="Primeira">
 							<span aria-hidden="true">&laquo;</span>
 							<span class="sr-only">Primeira</span>
 						</a>
 					</li>
-				    <li class="page-item">
+				    <li class="page-item" :class="{ disabled: estaNaPrimeiraPagina }">
 				      <a href="#" v-on:click="paginaAnterior" class="page-link" aria-label="Previous">
 				        <span aria-hidden="true">&lsaquo;</span>
 				        <span class="sr-only">Anterior</span>
 				      </a>
 				    </li>
-				    <li class="page-item" v-on:click="setaPagina(item)" v-for="item in totalPaginas" v-bind:class="[item == paginaAtual ? 'active' : '']">
+				    <li class="page-item disabled">
+                        <span v-if="exibeReticenciasAntes" style="cursor: default">...</span>
+                    </li>
+				    <li class="page-item" v-on:click="setaPagina(item)" v-for="item in exibirPaginasPaginacao" v-bind:class="[item == paginaAtual ? 'active' : '']">
 						<a href="#" class="page-link">{{item}}</a>
 					</li>
-				    <li class="page-item">
-				      <a href="#" v-on:click="proximaPagina" class="page-link" aria-label="Next">
-				        <span aria-hidden="true">&rsaquo;</span>
+				    <li class="page-item disabled">
+                        <span v-if="exibeReticenciasDepois" style="cursor: default">...</span>
+                    </li>
+				    <li class="page-item" :class="{ disabled: estaNaUltimaPagina }">
+                        <a href="#" v-on:click="proximaPagina" class="page-link" aria-label="Next">
+                            <span aria-hidden="true">&rsaquo;</span>
 				        <span class="sr-only">Próximo</span>
 				      </a>
 					</li>
-					<li class="page-item">
+					<li class="page-item" :class="{ disabled: estaNaUltimaPagina }">
 						<a href="#" v-on:click="ultimaPagina" class="page-link" aria-label="Ultima">
 							<span aria-hidden="true">&raquo;</span>
 							<span class="sr-only">Última</span>
